@@ -26,44 +26,40 @@ Following are required before you can run this app:
 * MongoDB (version 3.2.2)
 * Nodemon (version 1.18.10)
 
-### Two Modes to start
+### Installing
+
+You have to install dependencies of both backend and frontend. To do this,
+1. Open CMD at _backend_ directory. Type: _npm install_
+2. Do the same in _frontend directory.
+
+Then follow ahead to start server.
+
+### Starting
 
 There are two ways in which this application can be started:
 
 **1. Using frontend distributables (Angular) and integrating with backend (Express) to start the server**
 
-build angular project by using the following:
+Open CMD at _frontend_ directory. build angular project by using the following:
 ```
 ng build
 ```
 then run the following command to start frontend (Angular) with backend (Express)
-
+```
+node ./bin/www
+```
+This will start Angular with Express and you can view the application on port 3000 or _localhost:3000_
 
 **2. Using backend (Express) server as a proxy in Angular app to start the server**
 
-Run the following command at project root
-
+Open CMD at _backend_ directory. Start Express server by typing:
 ```
-Give examples
+node app.js
 ```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
+Open another CMD at _frontend_ directory. Start Angular server by typing:
 ```
-Give the example
+npm start
 ```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
