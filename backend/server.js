@@ -7,8 +7,9 @@ var app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({'extended':'false'}));
-app.use(express.static(path.join(__dirname, '../frontend/dist/xgrid-notifications')));
+app.use('/', express.static(path.join(__dirname, '../frontend/dist/xgrid-notifications')));
 app.use('/api', api);
+app.use('/*', express.static(path.join(__dirname, '../frontend/dist/xgrid-notifications')));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
