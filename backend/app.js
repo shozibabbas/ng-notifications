@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 var api = require('./api');
 
 app.get('/', (req, res) => res.send('Hello World!'));
-app.get('/hello', (req, res) => res.send('Hello Shozib!'));
+app.get('/hello', (req, res) => res.send('Hello!'));
 
 app.use('/api', api);
 

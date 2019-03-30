@@ -6,24 +6,40 @@ This project can handle realtime notifications on any user frontend.
 
 ### Prerequisites
 
-#### Basic
-
+Following are required before you can run this app:
 * Node (version 10.15.1)
 * npm (version 6.4.1)
 * TypeScript (version 3.2.4)
 
 #### Frontend
 
-* Angular
+* Angular (version 7.3.4)
 * Angular CLI (version 7.3.4)
+* ReactiveX (version 6.3.3)
+* ngx Cookie Service (version 2.1.0)
+* Bootstrap (version 4.3.1)
+* ng Bootstrap (version 4.1.0)
+* ngx Bootstrap (version 3.2.0)
 
-### Two Modes for start
+#### Backend
+* ExpressJS (vresion 4.16.4)
+* MongoDB (version 3.2.2)
+* Nodemon (version 1.18.10)
+
+### Two Modes to start
 
 There are two ways in which this application can be started:
-1. Using frontend distributables (Angular) and integrating with backend (Express) to start the server
-2. Using backend (Express) server as a proxy in Angular app to start the server
 
 **1. Using frontend distributables (Angular) and integrating with backend (Express) to start the server**
+
+build angular project by using the following:
+```
+ng build
+```
+then run the following command to start frontend (Angular) with backend (Express)
+
+
+**2. Using backend (Express) server as a proxy in Angular app to start the server**
 
 Run the following command at project root
 
