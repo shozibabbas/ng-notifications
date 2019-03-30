@@ -1,0 +1,11 @@
+/* div for showing login elements */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+/* form containing login elements */
+.login-container form {
+  max-width: 20rem;
+}

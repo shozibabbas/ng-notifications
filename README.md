@@ -26,7 +26,7 @@ Following are required before you can run this app:
 * MongoDB (version 3.2.2)
 * Nodemon (version 1.18.10)
 
-### Installing
+## Installing the app
 
 You have to install dependencies of both backend and frontend. To do this,
 1. Open CMD at _backend_ directory. Type: _npm install_
@@ -34,7 +34,7 @@ You have to install dependencies of both backend and frontend. To do this,
 
 Then follow ahead to start server.
 
-### Starting
+## Starting the app
 
 There are two ways in which this application can be started:
 
@@ -61,9 +61,23 @@ Open another CMD at _frontend_ directory. Start Angular server by typing:
 npm start
 ```
 
-#### How do both work?
+### How do both work?
 * **Solution 1** starts an express HTTP server and adds static route for accessing Angular app while express's own routes are added as well. The solution starts on _localhost:3000_
 * **Solution 2** adds backend _(localhost:3000)_ as a proxy server on _'/api'_ in Angular app. Hence, api is accessible through _localhost:4200/api_ while the app works on _localhost:4200_
+
+## Page Details
+
+This app contains the following pages:
+1. Login
+2. Register
+3. Notification Dashboard
+4. New Notification Generator
+5. Edit Notification
+
+### Login
+
+![picture alt](https://i.imgur.com/K1wlXHb.png "Login Screen")
+
 
 ## Running the tests
 
@@ -95,26 +109,10 @@ Add additional notes about how to deploy this on a live system
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
 ## Authors
 
-* **Sayyed Shozib Abbas** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Sayyed Shozib Abbas** (https://github.com/shozibabbas)
 
 ## License
 
 This project is open license. It was written for educational purposes.
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
