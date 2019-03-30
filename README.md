@@ -61,6 +61,10 @@ Open another CMD at _frontend_ directory. Start Angular server by typing:
 npm start
 ```
 
+#### How do both work?
+* **Solution 1** starts an express HTTP server and adds static route for accessing Angular app while express's own routes are added as well. The solution starts on _localhost:3000_
+* **Solution 2** adds backend _(localhost:3000)_ as a proxy server on _'/api'_ in Angular app. Hence, api is accessible through _localhost:4200/api_ while the app works on _localhost:4200_
+
 ## Running the tests
 
 Explain how to run the automated tests for this system
@@ -101,13 +105,13 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Sayyed Shozib Abbas** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is open license. It was written for educational purposes.
 
 ## Acknowledgments
 
