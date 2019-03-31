@@ -80,6 +80,8 @@ This app has following components:
 6. NotificationGenerator
 7. Register
 
+Every component consists of ```AlertComponent```. Components mentioned below will contain this component as well.
+
 #### 1. AlertComponent
 It creates the alerts that are shown for a better UI. Messages related to component functioning are shown here.
 
@@ -89,8 +91,20 @@ These messages include:
 * http errors
 * and many more...
 
+```AlertComponent``` operates using ```AlertService```
+
 #### 2. DashboardComponent
-This creates the dashboard view. All notifications are shown here. I
+This creates the dashboard view. All notifications are shown here. It also shows any new notifications as well.
+
+This view includes:
+* Navigation to create new notifications and log out
+* options to edit and delete notifications
+* view new notifications
+
+The ```DashboardComponent``` consists of ```NotificationComponent```
+
+#### 3. LoginComponent
+This allows user to sign in. It has fields for username and password.
 
 ## User Interface
 
