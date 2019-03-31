@@ -69,7 +69,6 @@ export class NotificationService {
     return this.http.put(APIRoutes.NOTIFICATIONS, notification, httpOptions).pipe(
       (tap(status => {
         if (status) {
-          this.get().subscribe();
         } else {
           this.logError('Error in updating notification');
         }
@@ -82,7 +81,6 @@ export class NotificationService {
     return this.http.delete(`${APIRoutes.NOTIFICATIONS}/${notification._id}`, httpOptions).pipe(
       (tap(status => {
         if (status) {
-          this.get().subscribe();
         } else {
           this.logError('Error in deleting notification');
         }

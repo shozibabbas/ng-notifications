@@ -81,7 +81,7 @@ export class NotificationDetailComponent implements OnInit {
   /**
    * This method runs on saving current notification
    */
-  onSubmit() {
+  onSubmit(shouldStay: boolean) {
     // validation of fields
     if (this.notification.Header === '' || this.notification.Body === '' || this.notification.Category === null) {
       const alert = new Alert();
@@ -101,7 +101,9 @@ export class NotificationDetailComponent implements OnInit {
       this.alertService.unshift(alert);
 
       // return to dashboard
-      this.location.back();
+      if (!shouldStay) {
+        this.location.back();
+      }
     });
   }
 

@@ -103,8 +103,26 @@ This view includes:
 
 The ```DashboardComponent``` consists of ```NotificationComponent```
 
+It uses ```NotificationService``` to show notifications.
+
 #### 3. LoginComponent
-This allows user to sign in. It has fields for username and password.
+This allows user to sign in. It has fields for username and password. Validations are in place for input fields.
+
+#### 4. NotificationComponent
+
+This component handles notification display and links to edit and delete.
+
+It uses ```NotificationService```
+
+#### 5. NotificationDetailComponent
+
+This component shows controls for editing a notification. It allows user to enter new details of a previous notification. Validation checks are in place to ensure proper data entry.
+
+This component uses ```NotificationService``` to update data.
+
+#### 6. NotificationGeneratorComponent
+
+This component creates controls for creating new notification. It allows user to enter details and save notification. Notifications get updated in realtime.
 
 ## User Interface
 
