@@ -6,7 +6,7 @@ import {tap} from 'rxjs/operators';
 import {CookieService} from 'ngx-cookie-service';
 import {Router} from '@angular/router';
 import {APIRoutes} from '../api-routes';
-import {Alert} from '../models/Alert';
+import {Md5} from 'ts-md5/dist/md5';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -35,7 +35,7 @@ export class UserService {
   }
 
   Login(username: string, password: string): Observable<User> {
-    return this.http.post<User>(APIRoutes.USER_LOGIN, { Username: username, Password: password}, httpOptions).pipe(
+    return this.http.post<User>(APIRoutes.USER_LOGIN, { Username: username, Password: Md5.hashStr(password)}, httpOptions).pipe(
       tap(userProfile => {
         if (userProfile !== null) {
           this.user = userProfile;
@@ -47,7 +47,7 @@ export class UserService {
   }
 
   Register(fullName: string, username: string, password: string): Observable<any> {
-    return this.http.post<User>(APIRoutes.USER_REGISTER, { FullName: fullName, Username: username, Password: password }, httpOptions);
+    return this.http.post<User>(APIRoutes.USER_REGISTER, { FullName: fullName, Username: username, Password: Md5.hashStr(password) }, httpOptions);
   }
 
   Logout(): boolean {

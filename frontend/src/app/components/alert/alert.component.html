@@ -1,0 +1,4 @@
+<!-- iterate on all available alerts -->
+<ng-container *ngFor="let alert of alertService.alertsList">
+  <ngb-alert [type]="alert.type" (close)="alertService.close(alert)">{{alert.message}}</ngb-alert>
+</ng-container>

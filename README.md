@@ -36,6 +36,8 @@ Then follow ahead to start server.
 
 ## Starting the app
 
+_Please Ensure MongoDB service is running before starting the app_
+
 There are two ways in which this application can be started:
 
 **1. Using frontend distributables (Angular) and integrating with backend (Express) to start the server**
@@ -65,7 +67,34 @@ npm start
 * **Solution 1** starts an express HTTP server and adds static route for accessing Angular app while express's own routes are added as well. The solution starts on _localhost:3000_
 * **Solution 2** adds backend _(localhost:3000)_ as a proxy server on _'/api'_ in Angular app. Hence, api is accessible through _localhost:4200/api_ while the app works on _localhost:4200_
 
-## Page Details
+## App Working
+
+### Components
+
+This app has following components:
+1. Alert
+2. Dashboard
+3. Login
+4. Notification
+5. NotificationDetail
+6. NotificationGenerator
+7. Register
+
+#### 1. AlertComponent
+It creates the alerts that are shown for a better UI. Messages related to component functioning are shown here.
+
+These messages include:
+* Validation Errors
+* authentication issues
+* http errors
+* and many more...
+
+#### 2. DashboardComponent
+This creates the dashboard view. All notifications are shown here. I
+
+## User Interface
+
+### Pages
 
 This app contains the following pages:
 1. Login
@@ -74,34 +103,14 @@ This app contains the following pages:
 4. New Notification Generator
 5. Edit Notification
 
-### Login
+### 1. Login
 
-![picture alt](https://i.imgur.com/K1wlXHb.png "Login Screen")
+Allows user to login to the system. The user must be registered first.
 
+### 2. Register
 
-## Running the tests
+Allows user to register to the system. Currently, the system only takes in ```full name```, ```username``` and ```password```
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
