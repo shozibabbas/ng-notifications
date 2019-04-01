@@ -21,7 +21,7 @@ Then follow ahead to start server.
 
 ## Starting the app
 
-_Please Ensure MongoDB service is installed properly and running before starting the app_
+_Please Ensure MongoDB service is installed properly and running with database and collections created. before starting the app. (For more information, check Database Structure)_
 
 There are two ways in which this application can be started:
 
@@ -161,7 +161,9 @@ Following is the routing scheme:
 * ```/register``` returns confirmation of registration
 * ```/notification/:userId``` returns all notifications of the user with most recent on the top
 * ```/notification/:userId/:notificationId``` returns ```UserNotification``` object which match the provided UserID and NotificationId
-* ```/notification (PUT Method)``` gets 
+* ```/notification (POST method)``` creates new Notification entry in the collection.
+* ```/notification (PUT Method)``` updates received notification object on the basis of __id_
+* ```/notification/:notificationId (DELETE method)``` deletes notification on the basis of __id_
 
 ## User Interface
 
@@ -197,6 +199,8 @@ Allows user to edit any previously saved notification.
 ## Database Structure
 
 The database under use is **MongoDB**. MongoDB runs as a service on port 27017. It is attached to backend (Express).
+
+The database connection is initialized when the backend (Express) server is started.
 
 The name of database under use is ```NotificationsTest```. It has two collections:
 1. UserProfiles
