@@ -9,10 +9,7 @@ import {AlertService} from './alert.service';
 import {Alert} from '../models/Alert';
 import {Category} from '../models/Category';
 import {Router} from '@angular/router';
-
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
+import {environment} from '../../environments/environment';
 
 const INFO_TIMEOUT = 90000;
 
@@ -37,7 +34,7 @@ export class NotificationService {
       userNotificationRoute = APIRoutes.NOTIFICATIONS + '/' + this.userService.Get()._id + '/' + notificationId;
     }
 
-    return this.http.get<UserNotification[]>(userNotificationRoute, httpOptions).pipe(
+    return this.http.get<UserNotification[]>(userNotificationRoute, environment.httpOptions).pipe(
       tap(notifications => {
         if (notificationId === undefined) {
           this.notifications = notifications;
@@ -48,7 +45,7 @@ export class NotificationService {
   }
 
   add(notification): Observable<UserNotification> {
-    return this.http.post<UserNotification>(APIRoutes.NOTIFICATIONS, notification, httpOptions).pipe(
+    return this.http.post<UserNotification>(APIRoutes.NOTIFICATIONS, notification, environment.httpOptions).pipe(
       (tap(result => {
         if (result !== null) {
           this.notifications.unshift(result);
@@ -66,7 +63,7 @@ export class NotificationService {
   }
 
   update(notification): Observable<any> {
-    return this.http.put(APIRoutes.NOTIFICATIONS, notification, httpOptions).pipe(
+    return this.http.put(APIRoutes.NOTIFICATIONS, notification, environment.httpOptions).pipe(
       (tap(status => {
         if (status) {
         } else {
@@ -78,7 +75,7 @@ export class NotificationService {
   }
 
   delete(notification): Observable<any> {
-    return this.http.delete(`${APIRoutes.NOTIFICATIONS}/${notification._id}`, httpOptions).pipe(
+    return this.http.delete(`${APIRoutes.NOTIFICATIONS}/${notification._id}`, environment.httpOptions).pipe(
       (tap(status => {
         if (status) {
         } else {
