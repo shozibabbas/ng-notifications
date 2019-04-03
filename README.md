@@ -109,6 +109,12 @@ This component uses ```NotificationService``` to update data.
 
 This component creates controls for creating new notification. It allows user to enter details and save notification. Notifications get updated in realtime.
 
+#### 7. RegisterComponent
+
+This component has controls for creating new user account. It allows user to enter his details, then sends them on the server to register. After this, the user can login.
+
+This component uses ```UserService``` to create user.
+
 ### Services
 
 This app has following services:
