@@ -11,7 +11,6 @@ import {Category} from '../models/Category';
 import {Router} from '@angular/router';
 import {environment} from '../../environments/environment';
 
-const INFO_TIMEOUT = 90000;
 
 @Injectable({
   providedIn: 'root'
@@ -49,11 +48,12 @@ export class NotificationService {
       (tap(result => {
         if (result !== null) {
           this.notifications.unshift(result);
-          if (result.Category === Category.INFO) {
+          if (result.Category.toString() === "INFO") {
             setTimeout(() => {
-              result.IsClosed = true;
-              this.update(result).subscribe(_ => {});
-            }, INFO_TIMEOUT);
+              this.notifications.filter((value) => {
+                return value === result;
+              })[0].IsClosed = true;
+            }, environment.INFO_TIMEOUT);
           }
         } else {
           this.logError('Error in adding notification');
@@ -66,6 +66,9 @@ export class NotificationService {
     return this.http.put(APIRoutes.NOTIFICATIONS, notification, environment.httpOptions).pipe(
       (tap(status => {
         if (status) {
+          this.notifications.filter((value) => {
+            return value._id === notification._id;
+          })[0] = notification;
         } else {
           this.logError('Error in updating notification');
         }
@@ -78,6 +81,7 @@ export class NotificationService {
     return this.http.delete(`${APIRoutes.NOTIFICATIONS}/${notification._id}`, environment.httpOptions).pipe(
       (tap(status => {
         if (status) {
+          this.notifications.splice(this.notifications.indexOf(notification), 1);
         } else {
           this.logError('Error in deleting notification');
         }

@@ -30,7 +30,6 @@ export class DashboardComponent implements OnInit {
    */
   ngOnInit() {
     this.helper = new Helper();
-    this.notificationService.get();
   }
 
   /**
@@ -43,7 +42,6 @@ export class DashboardComponent implements OnInit {
       return;
     }
     this.notificationService.delete(notification).subscribe(result => {
-      console.log(result);
     });
   }
 }

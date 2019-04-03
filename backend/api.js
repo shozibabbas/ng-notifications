@@ -37,7 +37,6 @@ router.post('/login', function(req, res) {
  */
 router.post('/register', function(req, res) {
   db.collection("UserProfiles").findOne( { Username: req.body.Username }, (error, result) => {
-    console.log(result);
     if(result !== null) {
       res.send(false);
     }
@@ -64,7 +63,6 @@ router.get('/notification/:userId', function(req, res) {
  */
 router.get('/notification/:userId/:notificationId', function(req, res) {
   db.collection("Notifications").find({ UserId: req.params.userId, _id: new ObjectId(req.params.notificationId) }).sort({ Date: -1 }).toArray((error, result) => {
-    console.log(result);
     res.send(result);
   });
 });
@@ -74,7 +72,6 @@ router.get('/notification/:userId/:notificationId', function(req, res) {
  */
 router.post('/notification', function(req, res) {
   db.collection("Notifications").insertOne(req.body, (error, result) => {
-    console.log(result);
     if(result !== null)
       res.send(result.ops[0]);
   });
@@ -98,7 +95,6 @@ router.put('/notification', function(req, res) {
 router.delete('/notification/:notificationId', function(req, res) {
   let condition = { _id: new ObjectId(req.params.notificationId) };
   db.collection("Notifications").deleteOne(condition, (error, result) => {
-    console.log(result);
     if(result !== null)
       res.send(true);
   });

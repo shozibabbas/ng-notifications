@@ -40,7 +40,6 @@ export class NotificationComponent implements OnInit {
   close(notification: UserNotification) {
     notification.IsClosed = true;
     this.notificationService.update(notification).subscribe(result => {
-      this.notificationService.get().subscribe(_ => {});
     });
   }
 
